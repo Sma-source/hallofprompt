@@ -1,11 +1,11 @@
-import "@styles/globals.css";
+import "@styles/global.css";
 
 export const metadata = {
   title: "Hall Of Prompt",
   description: "The best Midjourney Prompts to inspire you!",
 };
 
-const BaseLayout = () => {
+const BaseLayout = ({ children }) => {
   return (
     <html lang="fr">
       <body>
