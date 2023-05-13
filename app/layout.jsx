@@ -1,5 +1,6 @@
 import "@styles/global.css";
 import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
   title: "Hall Of Prompt",
@@ -10,13 +11,15 @@ const BaseLayout = ({ children }) => {
   return (
     <html lang="fr">
       <body suppressHydrationWarning={true}>
-        <div className="main">
-          <div className="gradient" />
-        </div>
-        <main className="app">
-          <Nav />
-          {children}
-        </main>
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+          </div>
+          <main className="app">
+            <Nav />
+            {children}
+          </main>
+        </Provider>
       </body>
     </html>
   );
