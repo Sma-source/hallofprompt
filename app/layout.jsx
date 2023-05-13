@@ -1,5 +1,5 @@
-import Nav from "@components/Nav";
 import "@styles/global.css";
+import Nav from "@components/Nav";
 
 export const metadata = {
   title: "Hall Of Prompt",
@@ -9,7 +9,7 @@ export const metadata = {
 const BaseLayout = ({ children }) => {
   return (
     <html lang="fr">
-      <body>
+      <body suppressHydrationWarning={true}>
         <div className="main">
           <div className="gradient" />
         </div>
