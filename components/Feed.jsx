@@ -3,6 +3,16 @@
 import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 
+const PromptCardList = ({ data }) => {
+  return (
+    <div className="mt-16 prompt_layout">
+      {data.map((post) => {
+        <PromptCard key={post._id} post={post} />;
+      })}
+    </div>
+  );
+};
+
 const Feed = () => {
   const [allPosts, setAllPosts] = useState([]); // state posts to store data prompts
   const [searchText, setSearchText] = useState("");
