@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 
 const Feed = () => {
+  const [allPosts, setAllPosts] = useState([]); // state posts to store data prompts
   const [searchText, setSearchText] = useState("");
 
   const handleSearchChange = (e) => {};
