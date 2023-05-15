@@ -7,6 +7,13 @@ const Feed = () => {
   const [allPosts, setAllPosts] = useState([]); // state posts to store data prompts
   const [searchText, setSearchText] = useState("");
 
+  const fetchPosts = async () => {
+    const response = await fetch("/api/prompt");
+    const data = await response.json();
+
+    setAllPosts(data);
+  };
+
   const handleSearchChange = (e) => {};
   return (
     <section className="feed">
