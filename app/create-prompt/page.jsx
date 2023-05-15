@@ -12,7 +12,15 @@ const CreatePrompt = () => {
   const createPrompt = async (e) => {
     e.preventDefault();
   };
-  return <Form submitting={submitting} />;
+  return (
+    <Form
+      type="Create"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={createPrompt}
+    />
+  );
 };
 
 export default CreatePrompt;
