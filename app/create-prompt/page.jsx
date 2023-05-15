@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Form from "@components/Form";
 
 const CreatePrompt = () => {
+  const [submitting, setIsSubmitting] = useState(false);
   return <Form />;
 };
 
