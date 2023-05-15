@@ -10,21 +10,20 @@ const CreatePrompt = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
-  const [submitting, setIsSubmitting] = useState(false); // check if we are submiting the form
-  const [post, setPost] = useState({ prompt: "", tag: "" }); // object value that we are posting
+  const [submitting, setIsSubmitting] = useState(false);
+  const [post, setPost] = useState({ prompt: "", tag: "" });
 
   const createPrompt = async (e) => {
-    e.preventDefault(); //prevent reload browser
+    e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      //call api
       const response = await fetch("/api/prompt/new", {
         method: "POST",
         body: JSON.stringify({
           prompt: post.prompt,
           userId: session?.user.id,
-          tage: post.tag,
+          tag: post.tag,
         }),
       });
 
@@ -37,6 +36,7 @@ const CreatePrompt = () => {
       setIsSubmitting(false);
     }
   };
+
   return (
     <Form
       type="Create"
