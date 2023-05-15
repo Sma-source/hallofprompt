@@ -37,6 +37,7 @@ const Feed = () => {
           className="search_input peer"
         />
       </form>
+      <PromptCardList data={allPosts} />
     </section>
   );
 };
