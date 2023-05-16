@@ -6,6 +6,17 @@ import { useRouter } from "next/navigation";
 import Profile from "@components/Profile";
 
 const MyProfile = () => {
+  const [MyPosts, setMyPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch(``);
+      const data = await response.json();
+
+      setMyPosts(data);
+    };
+  }, []);
+
   const handleEdit = () => {};
 
   const handleDelete = () => {};
