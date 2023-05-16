@@ -15,7 +15,10 @@ const PromptCardList = ({ data }) => {
 
 const Feed = () => {
   const [allPosts, setAllPosts] = useState([]); // state posts to store data prompts
+
   const [searchText, setSearchText] = useState("");
+  const [searchTimeout, setSearchTimeout] = useState(null);
+  const [searchedResults, setSearchedResults] = useState([]);
 
   const fetchPosts = async () => {
     const response = await fetch("/api/prompt");
