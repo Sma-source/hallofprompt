@@ -31,7 +31,29 @@ const Feed = () => {
     fetchPosts();
   }, []);
 
-  const handleSearchChange = (e) => {};
+  const filterPrompts = (searchtext) => {
+    const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    return allPosts.filter(
+      (item) =>
+        regex.test(item.creator.username) ||
+        regex.test(item.tag) ||
+        regex.test(item.prompt)
+    );
+  };
+
+  const handleSearchChange = (e) => {
+    clearTimeout(searchTimeout);
+    setSearchText(e.target.value);
+
+    // debounce method
+    setSearchTimeout(
+      setTimeout(() => {
+        const searchedResult = filterPrompts(e.target.value);
+        setSearchedResults(searchedResult);
+      }, 500)
+    );
+  };
+
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
@@ -44,7 +66,11 @@ const Feed = () => {
           className="search_input peer"
         />
       </form>
-      <PromptCardList data={allPosts} />
+      {searchText ? (
+        <PromptCardList data={searchedResults} />
+      ) : (
+        <PromptCardList data={allPosts} />
+      )}
     </section>
   );
 };
