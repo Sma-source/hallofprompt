@@ -25,7 +25,20 @@ const MyProfile = () => {
     //navigate the user to page where they can edit
   };
 
-  const handleDelete = () => {};
+  const handleDelete = async (post) => {
+    const hasConfirm = confirm("Are you sure you want to delete this prompt?");
+    if (hasConfirm) {
+      try {
+        await fetch(`/api/prompt/${post._id.toString()}`, {
+          method: "DELETE",
+        });
+        const filteredPosts = MyPosts.filter((item) => item._id !== post._id);
+        setMyPosts(filteredPosts);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
   return (
     <Profile
       name="My"
