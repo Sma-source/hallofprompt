@@ -1,5 +1,6 @@
 # Hall Of Prompt
 Nextjs / TailwindCSS / Cloudinary 
+
 Create and share your best Midjourney Prompt!
 
 ![Thumbnail](https://raw.githubusercontent.com/Sma-source/hallofprompt/main/public/assets/thumbnail.png)
