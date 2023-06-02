@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hall Of Prompt
+Nextjs / TailwindCSS / Cloudinary Create and share your best Midjourney Prompt!
+
+![Thumbnail](https://raw.githubusercontent.com/Sma-source/hallofprompt/main/public/assets/thumbnail.png)
 
 ## Getting Started
 
