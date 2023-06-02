@@ -86,9 +86,9 @@ const Home = () => {
       </div>
 
       <h1 className="head_text text-center">
-        Inspire toi des Meilleures
+        The #1 website for
         <br className="max-md:hidden" />
-        <span className="blue_gradient text-center">Prompts Midjourney!</span>
+        <span className="blue_gradient text-center"> Midjourney Prompts !</span>
       </h1>
       <p className="desc text-center">
         Hall Of Prompt is an open-source AI prompting tool for modern world to

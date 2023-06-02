@@ -1,3 +1,5 @@
+"use client";
+import { CldUploadWidget } from "next-cloudinary";
 import Link from "next/link";
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
@@ -44,6 +46,24 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             className="form_input"
           />
         </label>
+        <label>
+          <span className="font-satoshi font-semibold text-base text-gray-700">
+            Upload your image
+          </span>
+        </label>
+        <CldUploadWidget
+          uploadPreset={process.env.CLOUDINARY_UPLOAD}
+          onUpload={(res) => setPost({ ...post, photo: res.info.public_id })}
+        >
+          {({ open }) => {
+            function handleOnClick(e) {
+              e.preventDefault();
+              open();
+            }
+            return <button onClick={handleOnClick}>Upload an Image</button>;
+          }}
+        </CldUploadWidget>
+
         <div className="flex-end mx-3 mb-5 gap-4">
           <Link href="/" className="text-gray-600 text-sm">
             Annuler
